@@ -23,7 +23,7 @@ import vedro
 from vedro_matrix import params_matrix
 
 class Scenario(vedro.Scenario):
-    subject = "Open /about page on {browser} with resolution {resolution}"
+    subject = "Open /about page ({browser}, {resolution})"
 
     @params_matrix(
         ["chrome", "firefox"],
@@ -42,10 +42,10 @@ class Scenario(vedro.Scenario):
 
 This script will generate and run 4 separate test scenarios:
 
-1. Opening the /about page on Chrome with a resolution of 1024x720.
-2. Opening the /about page on Chrome with a resolution of 1920x1080.
-3. Opening the /about page on Firefox with a resolution of 1024x720.
-4. Opening the /about page on Firefox with a resolution of 1920x1080.
+1. Open /about page (chrome, 1024x720)
+2. Open /about page (chrome, 1920x1080)
+3. Open /about page (firefox, 1024x720)
+4. Open /about page (firefox, 1920x1080)
 
 ### Running Tests
 
