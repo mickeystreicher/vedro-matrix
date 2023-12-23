@@ -18,5 +18,6 @@ jobs:
     - uses: abatilo/actions-poetry@v2
     - name: Test
       run: |
+        poetry install
         poetry build
         poetry run python -m unittest
