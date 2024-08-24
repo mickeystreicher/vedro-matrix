@@ -20,7 +20,7 @@ classifiers = [
 
 [tool.poetry.dependencies]
 python = ">=3.8"
-vedro = ">=1.9"
+vedro = ">=1.9,<2.0"
 
 [tool.poetry.dev-dependencies]
 

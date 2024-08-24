@@ -1,10 +1,13 @@
 # vedro-matrix
 
-`vedro-matrix` is a Python package that extends the `vedro` framework, enabling parameterized testing with matrix combinations. It simplifies the process of creating and managing multiple test scenarios, especially when dealing with combinations of different test parameters like browsers, screen resolutions, user types, etc.
+[![PyPI Version](https://img.shields.io/pypi/v/vedro-matrix)](https://pypi.org/project/vedro-matrix/)
+[![License](https://img.shields.io/github/license/mickeystreicher/vedro-matrix)](https://github.com/mickeystreicher/vedro-matrix/blob/main/LICENSE)
+
+`vedro-matrix` is a Python package that extends the [Vedro](https://vedro.io/) framework, enabling parameterized testing with matrix combinations. It simplifies the process of creating and managing multiple test scenarios, especially when dealing with combinations of different test parameters like browsers, screen resolutions, user types, etc.
 
 ## Installation
 
-Install `vedro-matrix` using pip:
+Install [vedro-matrix](https://pypi.org/project/vedro-matrix/) using pip:
 
 ```sh
 $ pip install vedro-matrix
