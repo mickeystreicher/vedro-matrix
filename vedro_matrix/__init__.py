@@ -3,7 +3,7 @@ from typing import Any, Callable, Iterable
 
 from vedro import params
 
-__version__ = "0.1.0"
+__version__ = "1.0.0"
 __all__ = ("params_matrix", "ParamsMatrix",)
 
 

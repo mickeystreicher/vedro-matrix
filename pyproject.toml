@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "vedro-matrix"
-version = "0.1.0"
+version = "1.0.0"
 description = "Simplify parameterized testing with matrix combinations of diverse test parameters"
 authors = [
     "Mickey Streicher <mickeystreicher@fastmail.us>"
