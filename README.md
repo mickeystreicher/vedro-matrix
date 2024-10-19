@@ -71,3 +71,54 @@ Scenarios
 # --seed 79b84f2d-e98c-47bf-b057-acdf597c4143
 # 4 scenarios, 4 passed, 0 failed, 0 skipped (1.51s)
 ```
+
+### Additional Usage Examples
+
+In addition to the standard matrix setup with fixed parameters, `vedro-matrix` offers flexible options to generate test cases using various types of iterables, like lists or enums, which simplifies the process of defining complex combinations of test inputs.
+
+**1. Simple Numeric Parameters**
+
+You can use `vedro-matrix` to test different inputs, such as numeric IDs or other sequences. Here's an example where `post_id` varies:
+
+```python
+import vedro
+from vedro_matrix import params_matrix
+
+class Scenario(vedro.Scenario):
+    @params_matrix([1, 2, 3])
+    def __init__(self, post_id):
+        self.post_id = post_id
+```
+
+This will generate and run 3 test cases with the following values for `post_id`:
+
+1. Scenario with `post_id = 1`
+2. Scenario with `post_id = 2`
+3. Scenario with `post_id = 3`
+
+**2. Using Enums for Parameters**
+
+In more structured setups, you can use enums to pass values to your test scenarios. This is particularly useful when the test parameters represent distinct options, such as browser types or user roles. Here's how to achieve that:
+
+```python
+import vedro
+from vedro_matrix import params_matrix
+from enum import StrEnum
+
+class Browser(StrEnum):
+    CHROME = "chrome"
+    FIREFOX = "firefox"
+
+
+class Scenario(vedro.Scenario):
+    @params_matrix(Browser)
+    def __init__(self, browser):
+        self.browser = browser
+```
+
+In this case, `vedro-matrix` will generate two scenarios:
+
+1. Scenario with `browser = "chrome"`
+2. Scenario with `browser = "firefox"`
+
+This approach improves code readability and maintainability, especially when managing larger test matrices with more complex inputs.
