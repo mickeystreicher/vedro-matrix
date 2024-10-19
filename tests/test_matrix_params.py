@@ -17,16 +17,8 @@ class TestParamsMatrix(unittest.TestCase):
         self.assertIsInstance(matrix, ParamsMatrix)
 
     def test_empty_params(self):
-        matrix = params_matrix()
-        mock = Mock()
-
-        res = matrix(mock)
-
-        self.assertEqual(res, mock)
-        self.assertEqual(mock.mock_calls, [])
-        self.assertEqual(self._get_params(mock), [
-            self._to_params(())
-        ])
+        with self.assertRaises(ValueError):
+            params_matrix()
 
     def test_combinations_of_three_params(self):
         matrix = params_matrix(["x1", "x2"], ["y1", "y2"], ["z1", "z2"])
