@@ -11,13 +11,23 @@ jobs:
       matrix:
         python-version: ['3.9', '3.10', '3.11', '3.12', '3.13']
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-python@v4
-      with:
-        python-version: ${{ matrix.python-version }}
-    - uses: abatilo/actions-poetry@v2
-    - name: Test
-      run: |
-        poetry install
-        poetry build
-        poetry run vedro
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install Poetry
+        uses: abatilo/actions-poetry@v2
+        with:
+          poetry-version: latest
+
+      - name: Install dependencies
+        run: |
+          poetry install --with test
+
+      - name: Run Vedro under coverage
+        run: |
+          poetry run coverage run -m vedro run
+          poetry run coverage report

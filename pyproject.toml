@@ -24,6 +24,7 @@ vedro = ">=1.9,<2.0"
 
 [tool.poetry.group.test.dependencies]
 vedro-fn = "^0.1.0"
+coverage = "^7.8.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
