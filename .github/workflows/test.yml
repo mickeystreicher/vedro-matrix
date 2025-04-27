@@ -30,4 +30,4 @@ jobs:
       - name: Run Vedro under coverage
         run: |
           poetry run coverage run -m vedro run --project-dir tests/
-          poetry run coverage report
+          poetry run coverage report --show-missing
